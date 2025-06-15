@@ -16,20 +16,29 @@ datasource db {
 }
 
 model Job {
-  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  id                String    @id @default(auto()) @map("_id") @db.ObjectId
   userId            String
   title             String
   description       String?
-  shortDesc         String?
-  imageUrl          String?
-  isPublished       Boolean  @default(false)
+  resumeUrl         String?
+  isPublished       Boolean   @default(false)
   tags              String[]
   savedUsers        String[]
   shiftTiming       String?
   yearsOfExperience String?
   workmode          String?
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  categoryId        String?   @db.ObjectId
+  category          Category? @relation("CategoryJobs", fields: [categoryId], references: [id])
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
 
-  @@index([title])
+  @@index([categoryId])
+}
+
+model Category {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String   @unique
+  jobs      Job[]    @relation("CategoryJobs")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

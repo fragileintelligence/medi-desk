@@ -18,7 +18,7 @@ function NavbarRoutes() {
           <Button
             variant={'outline'}
             size={'sm'}
-            className='border-purple-700/20'
+            className='border-blue-700/20'
           >
             <LogOut />
             Exit
@@ -29,7 +29,7 @@ function NavbarRoutes() {
           <Button
             variant={'outline'}
             size={'sm'}
-            className='border-purple-700/20'
+            className='border-blue-700/20'
           >
             <UserCog />
             Admin

@@ -15,6 +15,8 @@ import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import axios from 'axios'
+import { useRouter } from 'next/navigation'
+import { toast } from 'sonner'
 
 const formSchema = z.object({
   title: z.string().min(1, { message: 'Position cannot be empty' })
@@ -29,10 +31,12 @@ export default function JobCreatePage() {
   })
 
   const { isSubmitting, isValid, isLoading } = form.formState
+  const router = useRouter()
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const response = await axios.post('/api/jobs', values)
-      console.log('Job created successfully:', response.data)
+      router.push(`/admin/jobs/${response.data.id}`)
+      toast.success('Position created successfully!')
     } catch (error) {
       console.error('Error submitting form:', error)
     }
@@ -66,7 +70,7 @@ export default function JobCreatePage() {
               )}
             />
             <div className='flex items-center gap-x-2'>
-              <Link href='/'>
+              <Link href='/admin/jobs'>
                 <Button type='button' variant='secondary'>
                   Cancel
                 </Button>
