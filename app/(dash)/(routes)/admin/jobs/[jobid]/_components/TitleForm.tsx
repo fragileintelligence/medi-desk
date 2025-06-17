@@ -51,7 +51,7 @@ export function TitleForm({ initialData, jobId }: TitleFormProps) {
       toggleEdit()
       router.refresh()
     } catch (error) {
-      toast.error('Error updating job title')
+      toast.error('Error updating qualifications')
       return
     }
   }
@@ -63,7 +63,7 @@ export function TitleForm({ initialData, jobId }: TitleFormProps) {
   return (
     <div className='mt-6 border bg-neutral-100 rounded-md p-4'>
       <div className='font-medium flex items-center justify-between'>
-        Job Title
+        Qualification
         <Button onClick={toggleEdit} variant='ghost'>
           {isEditing ? 'Cancel' : 'Edit'}
         </Button>

@@ -54,7 +54,7 @@ export function CategoryForm({
       toggleEdit()
       router.refresh()
     } catch (error) {
-      toast.error('Error updating job title')
+      toast.error('Error updating qualifications')
       return
     }
   }
