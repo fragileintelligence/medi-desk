@@ -235,7 +235,7 @@ export function ResumeForm({ initialData, jobId }: ResumeFormProps) {
                 href={initialData.resumeUrl}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-blue-600 hover:underline'
+                className='text-cyan-300 hover:underline'
               >
                 View Resume
               </a>

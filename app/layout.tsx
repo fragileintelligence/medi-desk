@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Medi Desk',
-  description: 'Your one stop medical desk for jobs'
+  title: 'Steth Net',
+  description: 'For doctors of today and tomorrow',
 }
 
 export default function RootLayout({

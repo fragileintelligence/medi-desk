@@ -6,7 +6,7 @@ function SideBar() {
     <div className='h-full border-r flex flex-col overflow-y-auto bg-white'>
       <Link href='/'>
         <div>
-          <div className='p-6 text-2xl underline'>Medi Desk</div>
+          <div className='p-6 text-2xl underline'>Steth Net</div>
         </div>
       </Link>
       <div className='flex flex-col w-full'>

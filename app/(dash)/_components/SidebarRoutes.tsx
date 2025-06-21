@@ -95,7 +95,7 @@ function SidebarRouteItem(props: SidebarRouteItemProps) {
       className={cn(
         'flex items-center gap-x-2 text-neutral-500 text-sm font-[500] pl-6 transition-all hover:text-neutral-600 hover:bg-neutral-300/20',
         isActive &&
-          'text-blue-700 bg-blue-700/20 hover:bg-blue-700/20 hover:text-blue-700'
+          'text-cyan-700 bg-cyan-700/20 hover:bg-cyan-700/20 hover:text-cyan-700'
       )}
     >
       <div className='flex items-center gap-x-2 py-4'>
