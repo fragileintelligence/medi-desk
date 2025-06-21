@@ -1,10 +1,11 @@
 'use client'
 
 import { useSearchParams, useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import { toast } from 'sonner'
 
-export function ErrorToast() {
+// Inner component that uses useSearchParams
+function ErrorToastInner() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const error = searchParams.get('error')
@@ -34,4 +35,13 @@ export function ErrorToast() {
   }, [error, router])
 
   return null
+}
+
+// Exported component with built-in Suspense
+export function ErrorToast() {
+  return (
+    <Suspense fallback={null}>
+      <ErrorToastInner />
+    </Suspense>
+  )
 }
