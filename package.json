@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "primsa genrate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "seed": "prisma generate && tsx scripts/seed.ts",
